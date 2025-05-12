@@ -29,7 +29,7 @@ int main() {
     init_stack(&s);
     int ch;
 
-    while ((ch = getchar()) != '\n' && ch != EOF) {
+    while ((ch = getchar()) != '\n') {
         push(&s, ch);
         if (s.top > 0 && s.num[s.top - 1] == '(' && s.num[s.top] == ')') {
             s.top -= 2;
