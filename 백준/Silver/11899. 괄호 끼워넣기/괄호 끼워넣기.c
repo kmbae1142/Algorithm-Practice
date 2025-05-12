@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define SIZE 55
 
 typedef struct stack {
@@ -26,12 +27,10 @@ int main() {
 
     Stack s;
     init_stack(&s);
-    char str[53];
+    int ch;
 
-    scanf("%s", str);
-
-    for (int i = 0; str[i] != '\0'; i++) {
-        push(&s, str[i]);
+    while ((ch = getchar()) != '\n' && ch != EOF) {
+        push(&s, ch);
         if (s.top > 0 && s.num[s.top - 1] == '(' && s.num[s.top] == ')') {
             s.top -= 2;
         }
