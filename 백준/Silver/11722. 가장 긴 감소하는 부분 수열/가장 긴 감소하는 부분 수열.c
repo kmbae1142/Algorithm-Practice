@@ -1,11 +1,9 @@
 #include <stdio.h>
-
 #define max(a, b) ((a) > (b)) ? (a) : (b)
 
-int A[1000], dp[1000];
-
 int main() {
-
+    
+    int A[1000], dp[1000];
     int N, max_len = 0;
     scanf("%d", &N);
 
