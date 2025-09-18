@@ -3,7 +3,7 @@ from collections import deque
 input = sys.stdin.readline
 
 for _ in range(int(input())):
-    str = input().strip()
+    str = input().rstrip('\n')
     left, right = deque([]), deque([])
 
     for i in str:
