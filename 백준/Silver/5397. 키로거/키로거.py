@@ -3,10 +3,10 @@ from collections import deque
 input = sys.stdin.readline
 
 for _ in range(int(input())):
-    str = input().rstrip('\n')
+    s = input().rstrip('\n')
     left, right = deque([]), deque([])
 
-    for i in str:
+    for i in s:
         if i == '<':
             if left:
                 right.appendleft(left.pop())
