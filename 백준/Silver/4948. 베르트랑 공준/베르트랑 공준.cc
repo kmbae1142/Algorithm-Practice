@@ -4,7 +4,8 @@
 using namespace std;
 
 int main() {
-
+    
+    cin.tie(NULL), cout.tie(NULL); ios::sync_with_stdio(0);
 	int n;
 	bool* primes = new bool[LEN];
 	fill(primes, primes + LEN, true);
@@ -27,5 +28,7 @@ int main() {
 		}
 		cout << cnt << '\n';
 	}
+    
+    return 0;
 
 }
