@@ -1,0 +1,29 @@
+section .data
+    input: db "%d %d", 0
+    output: db "%d", 10, 0
+    a: dd 0
+    b: dd 0
+
+section .text
+    global main
+    extern printf
+    extern scanf
+
+main:
+    push rbp
+
+    mov rdi, input
+    lea rsi, [a]
+    lea rdx, [b]
+    call scanf
+
+    mov rax, [a]
+    add rax, [b]
+
+    mov rdi, output
+    mov rsi, rax
+    call printf
+
+    pop rbp
+    mov rax, 0
+    ret
