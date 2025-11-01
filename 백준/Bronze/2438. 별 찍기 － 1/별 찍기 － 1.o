@@ -1,7 +1,7 @@
 section .data
     input: db "%d", 0
     output_star: db "*", 0
-    output_es: db 10, 0
+    newline: db 10, 0
     n: dq 0
 
 section .text
@@ -36,7 +36,7 @@ inner_loop:
     cmp r13, r12
     jle inner_loop
 
-    mov rdi, output_es
+    mov rdi, newline
     call printf
 
     add r12, 1
