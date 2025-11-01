@@ -1,0 +1,44 @@
+section .data
+    input_T: db "%d", 0
+    input_num: db "%d %d", 0
+    output: db "%d", 10, 0
+    T: dd 0
+    a: dd 0
+    b: dd 0
+
+section .text
+    global main
+    extern scanf
+    extern printf
+
+main:
+    push rbp
+
+    mov rdi, input_T
+    lea rsi, [T]
+    call scanf
+    mov ebx, [T]
+    jmp loop
+
+loop:
+    mov rdi, input_num
+    lea rsi, [a]
+    lea rdx, [b]
+    call scanf
+
+    mov eax, 0
+    add eax, [a]
+    add eax, [b]
+
+    mov rdi, output
+    mov esi, eax
+    call printf
+
+    sub ebx, 1
+    cmp ebx, 0
+    jne loop
+
+Done:
+    pop rbp
+    mov rax, 0
+    ret
