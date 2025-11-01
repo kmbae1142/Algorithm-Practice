@@ -1,0 +1,44 @@
+section .data
+    input: db "%d", 0
+    output_star: db "*", 0
+    output_es: db 10, 0
+    n: dq 0
+
+section .text
+    global main
+    extern scanf
+    extern printf
+
+main:
+    push rbp
+
+    mov rdi, input
+    lea rsi, [n]
+    call scanf
+
+    mov r12, 0
+    mov r13, 0
+    jmp loop
+
+loop:
+    cmp r12, [n]
+    jl inner_loop
+
+    pop rbp
+    mov rax, 0
+    ret
+
+inner_loop:
+    mov rdi, output_star
+    call printf
+
+    add r13, 1
+    cmp r13, r12
+    jle inner_loop
+
+    mov rdi, output_es
+    call printf
+
+    add r12, 1
+    mov r13, 0
+    jmp loop
