@@ -21,15 +21,16 @@ int main() {
 	for (int i = 0; i < M; i++) {
 		scanf("%d %d %d %d", &x1, &y1, &x2, &y2);
 		int result = 0;
+        x1--; x2--; y1--; y2--;
 
-		if (y1 - 2 >= 0) {
-			for (int row = x1 - 1; row <= x2 - 1; row++) {
-				result += arr[row][y2 - 1] - arr[row][y1 - 2];
+		if (y1 - 1 >= 0) {
+			for (int row = x1; row <= x2; row++) {
+				result += arr[row][y2] - arr[row][y1 - 1];
 			}
 		}
 		else {
-			for (int row = x1 - 1; row <= x2 - 1; row++) {
-				result += arr[row][y2 - 1];
+			for (int row = x1; row <= x2; row++) {
+				result += arr[row][y2];
 			}
 		}
 		printf("%d\n", result);
