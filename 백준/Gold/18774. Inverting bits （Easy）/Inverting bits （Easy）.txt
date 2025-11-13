@@ -1,0 +1,69 @@
+get A
+shl A 1
+
+get B
+or A B
+shl A 1
+
+get C
+or A C
+shl A 1
+
+get D
+or A D
+shl A 1
+
+get E
+or A E
+shl A 1
+
+get F
+or A F
+shl A 1
+
+get G
+or A G
+shl A 1
+
+not A
+
+mov T 128
+and T A
+shr T 7
+put T
+shl A 1
+
+mov T 128
+and T A
+shr T 7
+put T
+shl A 1
+
+mov T 128
+and T A
+shr T 7
+put T
+shl A 1
+
+mov T 128
+and T A
+shr T 7
+put T
+shl A 1
+
+mov T 128
+and T A
+shr T 7
+put T
+shl A 1
+
+mov T 128
+and T A
+shr T 7
+put T
+shl A 1
+
+mov T 128
+and T A
+shr T 7
+put T
