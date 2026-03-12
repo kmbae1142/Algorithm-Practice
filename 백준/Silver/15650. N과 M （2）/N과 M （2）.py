@@ -1,8 +1,13 @@
-from itertools import combinations
+def find(n, m, num: list):
+    if len(num) == m:
+        print(*num)
+        return
+    for i in range(1, n + 1):
+        if i not in num and (not num or i > num[-1]):
+            num.append(i)
+            find(n, m, num)
+            num.pop()
 
 n, m = map(int, input().split())
-c = combinations(range(1, n + 1), m)
-c = list(c)
-
-for i in c:
-    print(*i)
+num = []
+find(n, m, num)
