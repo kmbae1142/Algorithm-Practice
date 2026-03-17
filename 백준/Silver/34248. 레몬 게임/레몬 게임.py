@@ -11,5 +11,5 @@ for i in A[1:]:
     else:
         s.append(i)
 
-if s[0] == 1 and len(s) % 3 == 0: s.clear()
+if s and s[0] == 1 and len(s) % 3 == 0: s.clear()
 print("Yes" if not s else "No")
