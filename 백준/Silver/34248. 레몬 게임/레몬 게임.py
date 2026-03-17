@@ -11,5 +11,5 @@ for i in A[1:]:
     else:
         s.append(i)
 
-if sum(s) == 3: s.clear()
+if s[0] == 1 and len(s) % 3 == 0: s.clear()
 print("Yes" if not s else "No")
