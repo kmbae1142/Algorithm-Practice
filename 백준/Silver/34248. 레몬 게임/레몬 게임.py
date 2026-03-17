@@ -6,13 +6,10 @@ A = list(map(int, input().split()))
 s = [A[0]]
 
 for i in A[1:]:
-    if not s:
-        s.append(i)
-    elif s[-1] + i == 3:
+    if s and s[-1] + i == 3:
         s.pop()
-    elif sum(s) + i == 3:
-        s.clear()
     else:
         s.append(i)
 
+if sum(s) == 3: s.clear()
 print("Yes" if not s else "No")
