@@ -1,13 +1,10 @@
-class Program {
-    static void Main()
-    {
-        double 전공과목별_합 = 0;
-        double 학점총합 = 0;
+double 전공과목별_합 = 0;
+double 학점총합 = 0;
 
-        for (int i = 0; i < 20; i++)
-        {
-            string[] input = Console.ReadLine().Split();
-            string 과목명 = input[0];
+for (int i = 0; i < 20; i++)
+{
+    string[] input = Console.ReadLine().Split();
+    string 과목명 = input[0];
             double 학점 = double.Parse(input[1]);
             string 등급 = input[2];
 
@@ -48,5 +45,5 @@ class Program {
             }
 
         Console.WriteLine("{0:F6}", 전공과목별_합 / 학점총합);
-    }
-}
+ 
+
